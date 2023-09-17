@@ -115,3 +115,16 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+resources:
+ Resources:
+  bukukoTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+    TableName: userTable
+    BillingMode: PAY_PER_REQUEST
+    AttributeDefinitions:
+      - AttributeName: user_id
+      - AttributeType: String
+    KeySchema:
+      - AttributeName: user_id
+        KeyType:HASH
